@@ -44,3 +44,46 @@ export const services = [
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, officia.',
   },
 ];
+
+export const tours = [
+  {
+    id: 1,
+    image: './images/tour-1.jpeg',
+    date: 'august 26th, 2020',
+    title: 'Tibet Adventure',
+    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
+    location: 'china',
+    duration: '6',
+    price: '2100',
+  },
+  {
+    id: 2,
+    image: './images/tour-2.jpeg',
+    date: 'october 1th, 2020',
+    title: 'best of java',
+    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
+    location: 'indonesia',
+    duration: '11',
+    price: '1400',
+  },
+  {
+    id: 3,
+    image: './images/tour-3.jpeg',
+    date: 'september 15th, 2020',
+    title: 'explore hong kong',
+    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
+    location: 'hong kong',
+    duration: '8',
+    price: '5000',
+  },
+  {
+    id: 4,
+    image: './images/tour-4.jpeg',
+    date: 'december 5th, 2019',
+    title: 'kenya highlights',
+    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
+    location: 'kenya',
+    duration: '20',
+    price: '3300',
+  },
+];
