@@ -1,15 +1,10 @@
+import Title from './Title';
+
 const Services = () => {
   return (
     <section className='section services' id='services'>
-      {/* <!-- title  --> */}
-      <div className='section-title'>
-        <h2>
-          our <span>services</span>
-        </h2>
-      </div>
-      {/* <!-- end of title  --> */}
+      <Title title='our' subtitle='services' />
       <div className='section-center services-center'>
-        {/* <!-- single service --> */}
         <article className='service'>
           <span className='service-icon'>
             <i className='fas fa-wallet fa-fw'></i>
@@ -22,8 +17,6 @@ const Services = () => {
             </p>
           </div>
         </article>
-        {/* <!-- end of single service --> */}
-        {/* <!-- single service --> */}
         <article className='service'>
           <span className='service-icon'>
             <i className='fas fa-tree fa-fw'></i>
@@ -36,8 +29,6 @@ const Services = () => {
             </p>
           </div>
         </article>
-        {/* <!-- end of single service --> */}
-        {/* <!-- single service --> */}
         <article className='service'>
           <span className='service-icon'>
             <i className='fas fa-socks fa-fw'></i>
@@ -50,7 +41,6 @@ const Services = () => {
             </p>
           </div>
         </article>
-        {/* <!-- end of single service --> */}
       </div>
     </section>
   );
