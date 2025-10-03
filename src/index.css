@@ -1,1 +1,29 @@
+/* debug css */
+/* *,
+*::before,
+*::after {
+  outline: 1px solid red;
+} */
+
 @import "tailwindcss";
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 1px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border-radius: 1px;
+
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: #27272A #ffffff;
+  }
+}

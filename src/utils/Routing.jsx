@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import ProductPage from '../pages/ProductPage';
 import Notfound from '../pages/Notfound';
-import Navbar from '../components/Navbar';
+import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
 
@@ -10,7 +10,7 @@ const Routing = () => {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        <Header />
         <Sidebar />
         <Routes>
           <Route path='/' element={<HomePage />} />
