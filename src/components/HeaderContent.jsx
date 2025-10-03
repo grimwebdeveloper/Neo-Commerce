@@ -1,7 +1,7 @@
 const HeaderContent = () => {
   return (
     <div className='h-screen grid content-center gap-2 px-4 max-w-screen-xl mx-auto'>
-      <div className='text-red-600 font-semibold pointer-events-none'>#HOT TREND</div>
+      <div className='text-red-600 font-semibold font-mono pointer-events-none'>#HOT_COLLECTIONS</div>
       <h1>
         <div className='font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl pointer-events-none'>
           LATEST TRENDS
