@@ -11,7 +11,7 @@ const HeaderContent = () => {
           LIMITED TIME OFFERS
         </div>
       </h1>
-      <a href='#show-now' className='font-semibold hover:underline'>
+      <a href='#show-now' className='font-semibold font-mono hover:underline'>
         SHOP NOW
       </a>
     </div>
