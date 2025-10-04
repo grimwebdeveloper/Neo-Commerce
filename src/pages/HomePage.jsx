@@ -21,16 +21,16 @@ const HomePage = () => {
         <div className='bg-black text-white px-4 py-2 font-semibold rounded'>
           All
         </div>
-        <div className='bg-black text-white px-4 py-2 font-semibold rounded'>
+        <div onClick={() => setProducts(filterMensClothing)} className='bg-black text-white px-4 py-2 font-semibold rounded'>
           Men Clothing
         </div>
-        <div className='bg-black text-white px-4 py-2 font-semibold rounded'>
+        <div onClick={() => setProducts(filterWomenClothing)} className='bg-black text-white px-4 py-2 font-semibold rounded'>
           Women Clothing
         </div>
-        <div className='bg-black text-white px-4 py-2 font-semibold rounded'>
+        <div onClick={() => setProducts(filterElectronics)} className='bg-black text-white px-4 py-2 font-semibold rounded'>
           Electronics
         </div>
-        <div className='bg-black text-white px-4 py-2 font-semibold rounded'>
+        <div onClick={() => setProducts(filterJewelry)} className='bg-black text-white px-4 py-2 font-semibold rounded'>
           Jewelry
         </div>
       </div>

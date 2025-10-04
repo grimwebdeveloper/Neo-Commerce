@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full transition-all duration-700 ${isNavbarActive && 'bg-white shadow'
+      className={`fixed z-50 top-0 w-full transition-all duration-700 ${isNavbarActive && 'bg-white shadow'
         }`}
     >
       <div className='max-w-screen-xl mx-auto p-4 h-20 flex items-center justify-between'>
