@@ -25,7 +25,7 @@ const Navbar = () => {
             <div className='text-2xl italic font-mono'>NEOKART</div>
           </i>
         </Link>
-        <i class='ri-shopping-bag-line text-4xl relative cursor-pointer'>
+        <i className='ri-shopping-bag-line text-4xl relative cursor-pointer'>
           <div className='absolute -right-1 -bottom-2 text-sm bg-red-600 text-white rounded-full h-6 w-6 flex justify-center items-center'>
             0
           </div>
