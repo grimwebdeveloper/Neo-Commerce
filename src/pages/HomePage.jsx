@@ -26,34 +26,34 @@ const HomePage = () => {
         Explore Our Products
       </h2>
 
-      <div className='flex justify-center items-center gap-8'>
+      <div className='flex justify-center items-center gap-8 max-w-screen-xl mx-auto p-4 flex-wrap'>
         <div
           onClick={() => setProducts(originalProducts)}
-          className='bg-black text-white px-4 py-2 font-semibold rounded'
+          className='bg-black text-white px-4 py-2 font-semibold rounded cursor-pointer'
         >
           All
         </div>
         <div
           onClick={() => setProducts(filterMensClothing)}
-          className='bg-black text-white px-4 py-2 font-semibold rounded'
+          className='bg-black text-white px-4 py-2 font-semibold rounded cursor-pointer'
         >
           Men Clothing
         </div>
         <div
           onClick={() => setProducts(filterWomenClothing)}
-          className='bg-black text-white px-4 py-2 font-semibold rounded'
+          className='bg-black text-white px-4 py-2 font-semibold rounded cursor-pointer'
         >
           Women Clothing
         </div>
         <div
           onClick={() => setProducts(filterElectronics)}
-          className='bg-black text-white px-4 py-2 font-semibold rounded'
+          className='bg-black text-white px-4 py-2 font-semibold rounded cursor-pointer'
         >
           Electronics
         </div>
         <div
           onClick={() => setProducts(filterJewelry)}
-          className='bg-black text-white px-4 py-2 font-semibold rounded'
+          className='bg-black text-white px-4 py-2 font-semibold rounded cursor-pointer'
         >
           Jewelry
         </div>

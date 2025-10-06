@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 const Product = ({ product }) => {
   const { id, title, price, description, category, image, rating } = product;
   return (
-    <Link to={`/product/${id}`} key={id} className='w-72 justify-self-center'>
+    <Link
+      to={`/product/${id}`}
+      key={id}
+      className='w-72 justify-self-center relative group overflow-hidden'
+    >
       <abbr title={description}>
         <div className='h-80 overflow-hidden bg-zinc-200/50 rounded mb-4 hover:bg-zinc-100  hover:shadow-md transition-all duration-300'>
           <img
@@ -21,6 +25,7 @@ const Product = ({ product }) => {
         <h4>${price}</h4>
         <h5>⭐{rating.rate.toFixed(2)}</h5>
       </div>
+      <i className='ri-add-line absolute top-0 -right-10 group-hover:top-0 group-hover:right-0 transition-all duration-300 text-4xl bg-green-600 text-white'></i>
     </Link>
   );
 };

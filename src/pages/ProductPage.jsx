@@ -37,7 +37,7 @@ const ProductPage = () => {
         return (
           <div
             key={id}
-            className='max-w-screen-xl mx-auto px-4 min-h-screen flex justify-center items-center py-16'
+            className='max-w-screen-xl mx-auto px-4 min-h-screen flex justify-center items-center py-16 mt-20 lg:mt-0'
           >
             <div className='flex flex-col gap-4 lg:flex-row lg:gap-16 xl:gap-32'>
               <div className='bg-zinc-200/50 rounded flex justify-center items-center lg:w-1/3'>
