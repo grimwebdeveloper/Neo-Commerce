@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { ProductContext } from '../context/CreateContexts';
 import { Link, useParams } from 'react-router-dom';
 
@@ -9,8 +9,24 @@ const ProductPage = () => {
   const currentProduct = products.filter((product) => product.id === +id);
   console.log(currentProduct);
 
+  useEffect(() => {
+    if (currentProduct.length > 0) {
+      document.title = currentProduct[0].title;
+    } else {
+      document.title = 'Product Not Found';
+    }
+  }, [currentProduct]);
+
   const [changeColor, setchangeColor] = useState(0);
   const [changeColorName, setChangeColorName] = useState('Original');
+
+  if (currentProduct.length === 0) {
+    return (
+      <div className='h-screen flex justify-center items-center text-4xl animate-pulse'>
+        Loading...
+      </div>
+    );
+  }
 
   return (
     <>
