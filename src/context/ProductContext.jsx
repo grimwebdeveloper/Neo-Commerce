@@ -4,6 +4,7 @@ import { ProductContext } from './CreateContexts';
 const ProductProvider = ({ children }) => {
   // State to store products
   const [products, setProducts] = useState([]);
+  const [originalProducts, setOriginalProducts] = useState([]);
 
   // Function to fetch products
   const fetchProducts = async () => {
@@ -12,6 +13,7 @@ const ProductProvider = ({ children }) => {
       if (!response.ok) throw new Error('Failed to fetch products');
       const data = await response.json();
       setProducts(data);
+      setOriginalProducts(data);
     } catch (error) {
       console.error('Error fetching products:', error);
     }
@@ -23,7 +25,7 @@ const ProductProvider = ({ children }) => {
   }, []);
 
   return (
-    <ProductContext value={{ products, setProducts }}>
+    <ProductContext value={{ products, setProducts, originalProducts }}>
       {children}
     </ProductContext>
   );
