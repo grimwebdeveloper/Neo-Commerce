@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import { ProductContext } from '../context/CreateContexts';
 import Product from '../components/Product';
+import Sorting from '../components/Sorting';
 
 const HomePage = () => {
   const { products, setProducts, originalProducts } =
@@ -26,7 +27,7 @@ const HomePage = () => {
         Explore Our Products
       </h2>
 
-      <div className='flex justify-center items-center gap-8 max-w-screen-xl mx-auto p-4 flex-wrap'>
+      <div className='flex justify-center items-center gap-4 max-w-screen-xl mx-auto p-4 flex-wrap'>
         <div
           onClick={() => setProducts(originalProducts)}
           className='bg-black text-white px-4 py-2 font-semibold rounded cursor-pointer'
@@ -58,6 +59,8 @@ const HomePage = () => {
           Jewelry
         </div>
       </div>
+
+      <Sorting />
 
       <div className='max-w-screen-xl mx-auto px-4 mt-32 grid justify-center gap-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3'>
         {products.map((product) => (
