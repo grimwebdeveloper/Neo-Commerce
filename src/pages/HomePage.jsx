@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ProductContext } from '../context/CreateContexts';
 import Product from '../components/Product';
 import Sorting from '../components/Sorting';
@@ -20,6 +20,10 @@ const HomePage = () => {
     (product) => product.category === `electronics`
   );
   console.log(filterElectronics);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   return (
     <div className='py-16'>

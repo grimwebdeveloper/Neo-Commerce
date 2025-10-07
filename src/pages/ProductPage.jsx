@@ -20,6 +20,10 @@ const ProductPage = () => {
   const [changeColor, setchangeColor] = useState(0);
   const [changeColorName, setChangeColorName] = useState('Original');
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (currentProduct.length === 0) {
     return (
       <div className='h-screen flex justify-center items-center text-4xl animate-pulse'>

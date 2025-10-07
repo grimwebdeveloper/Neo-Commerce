@@ -1,7 +1,11 @@
-const Notfound = () => {
-  return (
-    <div>Notfound</div>
-  )
-}
+import { useEffect } from 'react';
 
-export default Notfound
+const Notfound = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return <div>Notfound</div>;
+};
+
+export default Notfound;
