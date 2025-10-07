@@ -20,7 +20,10 @@ const Product = ({ product }) => {
       <h2 className='line-clamp-1'>
         <abbr title={title}>{title}</abbr>
       </h2>
-      <h3 className='capitalize text-zinc-600'>{category}</h3>
+      <h3 className='capitalize text-zinc-600 flex justify-between items-center py-1'>
+        <div>{category}</div>
+        <div>{rating.count}+ sold</div>
+      </h3>
       <div className='flex justify-between items-center'>
         <h4>${price}</h4>
         <h5>⭐{rating.rate.toFixed(2)}</h5>
