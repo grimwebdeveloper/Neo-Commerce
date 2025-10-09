@@ -19,7 +19,7 @@ const HomePage = () => {
   const filterElectronics = originalProducts.filter(
     (product) => product.category === `electronics`
   );
-  console.log(filterElectronics);
+  // console.log(filterElectronics);
 
   useEffect(() => {
     window.scrollTo(0, 0);
