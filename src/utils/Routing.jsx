@@ -11,7 +11,7 @@ const Routing = () => {
     <>
       <BrowserRouter>
         <Header />
-        {/* <Sidebar /> */}
+        <Sidebar />
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/product/:id' element={<ProductPage />} />

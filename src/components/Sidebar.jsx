@@ -1,12 +1,21 @@
+import { useContext } from 'react';
+import { SidebarContext } from '../context/CreateContexts';
+
 const Sidebar = () => {
+  const { openSidebar, setOpenSidebar } = useContext(SidebarContext);
   return (
     <div
       id='sidebar'
-      className='bg-white fixed top-0 right-0 z-50 h-screen w-full md:w-3/5 lg:w-2/5 shadow-2xl p-8 flex flex-col'
+      className={`bg-white fixed top-0 right-0 z-50 h-screen w-full md:w-3/5 lg:w-2/5 shadow-2xl p-8 flex flex-col transition-transform duration-300 ease-in-out ${
+        openSidebar ? 'translate-x-0' : 'translate-x-full'
+      }`}
     >
       <div className='flex items-center justify-between pb-6 px-2'>
         <div className='font-semibold'>ORDER</div>
-        <i className='ri-close-large-line'></i>
+        <i
+          onClick={() => setOpenSidebar(false)}
+          className='ri-close-large-line cursor-pointer'
+        ></i>
       </div>
 
       <div className='max-h-[72vh] overflow-auto pt-8 border-t border-zinc-300 flex flex-col gap-16'>
