@@ -1,8 +1,10 @@
 import { useContext } from 'react';
-import { SidebarContext } from '../context/CreateContexts';
+import { CartContext, SidebarContext } from '../context/CreateContexts';
 
 const Sidebar = () => {
   const { openSidebar, setOpenSidebar } = useContext(SidebarContext);
+  const { removeFromCart, clearCart, increaseQuantity, decreaseQuantity } =
+    useContext(CartContext);
   return (
     <div
       id='sidebar'
@@ -31,17 +33,28 @@ const Sidebar = () => {
             </div>
             <div>Rs. 88759.11</div>
             <div className='flex border border-zinc-300 w-fit py-0.5'>
-              <button type='button' className='w-8'>
+              <button
+                onClick={() => decreaseQuantity()}
+                type='button'
+                className='w-8'
+              >
                 <i className='ri-subtract-fill text-red-600'></i>
               </button>
               <div className='text-center'>0</div>
-              <button type='button' className='w-8'>
+              <button
+                onClick={() => increaseQuantity()}
+                type='button'
+                className='w-8'
+              >
                 <i className='ri-add-fill text-green-600'></i>
               </button>
             </div>
           </div>
           <div className='flex flex-col min-w-fit'>
-            <i className='ri-close-large-line ml-auto bg-red-600 text-white p-1.5'></i>
+            <i
+              onClick={() => removeFromCart()}
+              className='ri-close-large-line ml-auto bg-red-600 text-white p-1.5'
+            ></i>
             <div className='mt-auto ml-auto font-semibold'>Rs. 88759.11</div>
           </div>
         </div>
@@ -50,7 +63,10 @@ const Sidebar = () => {
       <div className='mt-auto px-2'>
         <div className='flex items-center justify-between py-4'>
           <div className='font-semibold text-lg'>TOTAL: Rs. 00.00</div>
-          <i className='ri-delete-bin-line text-xl bg-red-600 text-white p-1.5'></i>
+          <i
+            onClick={clearCart}
+            className='ri-delete-bin-line text-xl bg-red-600 text-white p-1.5'
+          ></i>
         </div>
         <button
           type='button'

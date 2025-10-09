@@ -1,10 +1,13 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../context/CreateContexts';
 
 const Product = ({ product }) => {
   const { id, title, price, description, category, image, rating } = product;
+  const { addToCart } = useContext(CartContext);
   return (
     <Link
-      to={`/product/${id}`}
+      // to={`/product/${id}`}
       key={id}
       className='w-72 justify-self-center relative group overflow-hidden'
     >
@@ -28,7 +31,10 @@ const Product = ({ product }) => {
         <h4>${price}</h4>
         <h5>⭐{rating.rate.toFixed(2)}</h5>
       </div>
-      <i className='ri-add-line absolute top-0 -right-10 group-hover:top-0 group-hover:right-0 transition-all duration-300 text-4xl bg-green-600 text-white'></i>
+      <i
+        onClick={() => addToCart(product)}
+        className='ri-add-line absolute top-0 -right-10 group-hover:top-0 group-hover:right-0 transition-all duration-300 text-4xl bg-green-600 text-white'
+      ></i>
     </Link>
   );
 };
