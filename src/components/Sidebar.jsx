@@ -27,9 +27,6 @@ const Sidebar = () => {
 
       <div className='max-h-[72vh] overflow-auto pt-8 border-t border-zinc-300 flex flex-col gap-16'>
         {cart.map((product) => {
-          // const [
-          //   quantity,
-          // ] = product;
           return (
             <div key={product.id} className='flex gap-4 justify-between p-2'>
               <img src={product.image} alt={product.title} className='w-20' />
@@ -58,7 +55,7 @@ const Sidebar = () => {
               </div>
               <div className='flex flex-col min-w-fit'>
                 <i
-                  onClick={() => removeFromCart()}
+                  onClick={() => removeFromCart(product.id)}
                   className='ri-close-large-line ml-auto bg-red-600 text-white p-1.5'
                 ></i>
                 <div className='mt-auto ml-auto font-semibold'>
