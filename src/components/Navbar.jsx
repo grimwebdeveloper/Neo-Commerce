@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { SidebarContext } from '../context/CreateContexts';
+import { CartContext, SidebarContext } from '../context/CreateContexts';
 
 const Navbar = () => {
   const [isNavbarActive, setIsNavbarActive] = useState(false);
@@ -16,6 +16,8 @@ const Navbar = () => {
   });
 
   const { setOpenSidebar } = useContext(SidebarContext);
+
+  const { cart } = useContext(CartContext);
 
   return (
     <nav
@@ -34,7 +36,7 @@ const Navbar = () => {
           className='ri-shopping-bag-line text-4xl relative cursor-pointer'
         >
           <div className='absolute -right-1 -bottom-2 text-sm bg-red-600 text-white rounded-full h-6 w-6 flex justify-center items-center'>
-            0
+            {cart.length}
           </div>
         </i>
       </div>

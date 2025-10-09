@@ -18,7 +18,7 @@ const Sidebar = () => {
       }`}
     >
       <div className='flex items-center justify-between pb-6 px-2'>
-        <div className='font-semibold'>ORDER</div>
+        <div className='font-semibold'>ORDER ({cart.length})</div>
         <i
           onClick={() => setOpenSidebar(false)}
           className='ri-close-large-line cursor-pointer'
@@ -37,7 +37,7 @@ const Sidebar = () => {
                 <div>Rs. {(product.price * 88.76).toFixed(2)}</div>
                 <div className='flex border border-zinc-300 w-fit py-0.5'>
                   <button
-                    onClick={() => decreaseQuantity()}
+                    onClick={() => decreaseQuantity(product.id)}
                     type='button'
                     className='w-8'
                   >
@@ -45,7 +45,7 @@ const Sidebar = () => {
                   </button>
                   <div className='text-center'>{product.quantity}</div>
                   <button
-                    onClick={() => increaseQuantity()}
+                    onClick={() => increaseQuantity(product.id)}
                     type='button'
                     className='w-8'
                   >

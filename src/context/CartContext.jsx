@@ -35,11 +35,26 @@ const CartProvider = ({ children }) => {
   };
 
   const increaseQuantity = (id) => {
-    console.log('Increase quantity', id);
+    const cartItem = cart.find((product) => product.id === id);
+    addToCart(cartItem);
   };
 
   const decreaseQuantity = (id) => {
-    console.log('Decrease quantity', id);
+    const cartItem = cart.find((product) => product.id === id);
+    if (cartItem) {
+      const newCart = cart.map((product) => {
+        if (product.id === id) {
+          return { ...product, quantity: product.quantity - 1 };
+        } else {
+          return product;
+        }
+      });
+      setCart(newCart);
+    }
+
+    if (cartItem.quantity === 1) {
+      removeFromCart(id);
+    }
   };
 
   return (
