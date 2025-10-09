@@ -3,8 +3,13 @@ import { CartContext, SidebarContext } from '../context/CreateContexts';
 
 const Sidebar = () => {
   const { openSidebar, setOpenSidebar } = useContext(SidebarContext);
-  const { removeFromCart, clearCart, increaseQuantity, decreaseQuantity } =
-    useContext(CartContext);
+  const {
+    cart,
+    removeFromCart,
+    clearCart,
+    increaseQuantity,
+    decreaseQuantity,
+  } = useContext(CartContext);
   return (
     <div
       id='sidebar'
@@ -21,43 +26,48 @@ const Sidebar = () => {
       </div>
 
       <div className='max-h-[72vh] overflow-auto pt-8 border-t border-zinc-300 flex flex-col gap-16'>
-        <div className='flex gap-4 justify-between p-2'>
-          <img
-            src='https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png'
-            alt=''
-            className='w-20'
-          />
-          <div className='mr-auto flex flex-col justify-between'>
-            <div className='line-clamp-1 font-semibold'>
-              Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
+        {cart.map((product) => {
+          // const [
+          //   quantity,
+          // ] = product;
+          return (
+            <div key={product.id} className='flex gap-4 justify-between p-2'>
+              <img src={product.image} alt={product.title} className='w-20' />
+              <div className='mr-auto flex flex-col justify-between'>
+                <div className='line-clamp-1 font-semibold'>
+                  {product.title}
+                </div>
+                <div>Rs. {(product.price * 88.76).toFixed(2)}</div>
+                <div className='flex border border-zinc-300 w-fit py-0.5'>
+                  <button
+                    onClick={() => decreaseQuantity()}
+                    type='button'
+                    className='w-8'
+                  >
+                    <i className='ri-subtract-fill text-red-600'></i>
+                  </button>
+                  <div className='text-center'>{product.quantity}</div>
+                  <button
+                    onClick={() => increaseQuantity()}
+                    type='button'
+                    className='w-8'
+                  >
+                    <i className='ri-add-fill text-green-600'></i>
+                  </button>
+                </div>
+              </div>
+              <div className='flex flex-col min-w-fit'>
+                <i
+                  onClick={() => removeFromCart()}
+                  className='ri-close-large-line ml-auto bg-red-600 text-white p-1.5'
+                ></i>
+                <div className='mt-auto ml-auto font-semibold'>
+                  Rs. {product.quantity * (product.price * 88.76).toFixed(2)}
+                </div>
+              </div>
             </div>
-            <div>Rs. 88759.11</div>
-            <div className='flex border border-zinc-300 w-fit py-0.5'>
-              <button
-                onClick={() => decreaseQuantity()}
-                type='button'
-                className='w-8'
-              >
-                <i className='ri-subtract-fill text-red-600'></i>
-              </button>
-              <div className='text-center'>0</div>
-              <button
-                onClick={() => increaseQuantity()}
-                type='button'
-                className='w-8'
-              >
-                <i className='ri-add-fill text-green-600'></i>
-              </button>
-            </div>
-          </div>
-          <div className='flex flex-col min-w-fit'>
-            <i
-              onClick={() => removeFromCart()}
-              className='ri-close-large-line ml-auto bg-red-600 text-white p-1.5'
-            ></i>
-            <div className='mt-auto ml-auto font-semibold'>Rs. 88759.11</div>
-          </div>
-        </div>
+          );
+        })}
       </div>
 
       <div className='mt-auto px-2'>

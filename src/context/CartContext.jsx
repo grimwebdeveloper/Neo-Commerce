@@ -8,7 +8,20 @@ const CartProvider = ({ children }) => {
 
   const addToCart = (product) => {
     const { id, title, price, description, category, image, rating } = product;
-    console.log('Add to cart');
+    const newProduct = { ...product, quantity: 1 };
+    const isProductAlreadyInCart = cart.find((product) => product.id === id);
+    if (isProductAlreadyInCart) {
+      const updatedCart = cart.map((product) => {
+        if (product.id === id) {
+          return { ...product, quantity: product.quantity + 1 };
+        } else {
+          return product;
+        }
+      });
+      setCart(updatedCart);
+    } else {
+      setCart([...cart, newProduct]);
+    }
   };
 
   const removeFromCart = (id) => {
@@ -17,6 +30,7 @@ const CartProvider = ({ children }) => {
 
   const clearCart = () => {
     console.log('Clear cart');
+    setCart([]);
   };
 
   const increaseQuantity = (id) => {
@@ -30,6 +44,7 @@ const CartProvider = ({ children }) => {
   return (
     <CartContext
       value={{
+        cart,
         addToCart,
         removeFromCart,
         clearCart,
