@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { ProductContext } from '../context/CreateContexts';
+import { CartContext, ProductContext } from '../context/CreateContexts';
 import { Link, useParams } from 'react-router-dom';
 
 const ProductPage = () => {
@@ -23,6 +23,8 @@ const ProductPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const { addToCart } = useContext(CartContext);
 
   if (currentProduct.length === 0) {
     return (
@@ -135,7 +137,10 @@ const ProductPage = () => {
                   <div>{description}</div>
                 </div>
                 <div className='flex flex-col gap-4 mt-6 sm:flex-row lg:mt-auto'>
-                  <button className='bg-black text-white px-4 py-2 font-semibold rounded w-full cursor-pointer'>
+                  <button
+                    onClick={() => addToCart(product)}
+                    className='bg-black text-white px-4 py-2 font-semibold rounded w-full cursor-pointer'
+                  >
                     Add to Cart
                   </button>
                   <Link

@@ -5,6 +5,7 @@ const Sidebar = () => {
   const { openSidebar, setOpenSidebar } = useContext(SidebarContext);
   const {
     cart,
+    total,
     removeFromCart,
     clearCart,
     increaseQuantity,
@@ -56,7 +57,7 @@ const Sidebar = () => {
               <div className='flex flex-col min-w-fit'>
                 <i
                   onClick={() => removeFromCart(product.id)}
-                  className='ri-close-large-line ml-auto bg-red-600 text-white p-1.5'
+                  className='ri-close-large-line ml-auto bg-red-600 cursor-pointer text-white p-1.5'
                 ></i>
                 <div className='mt-auto ml-auto font-semibold'>
                   Rs. {product.quantity * (product.price * 88.76).toFixed(2)}
@@ -69,10 +70,10 @@ const Sidebar = () => {
 
       <div className='mt-auto px-2'>
         <div className='flex items-center justify-between py-4'>
-          <div className='font-semibold text-lg'>TOTAL: Rs. 00.00</div>
+          <div className='font-semibold text-lg'>TOTAL: Rs. {(total*88.76).toFixed(2)}</div>
           <i
             onClick={clearCart}
-            className='ri-delete-bin-line text-xl bg-red-600 text-white p-1.5'
+            className='ri-delete-bin-line text-xl bg-red-600 cursor-pointer text-white p-1.5'
           ></i>
         </div>
         <button
